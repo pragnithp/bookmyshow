@@ -23,14 +23,14 @@ def send_push_notification(title, message):
 
 # Function to scrape BookMyShow page and check for ticket availability
 def check_tickets():
-    url = "https://in.bookmyshow.com/buytickets/pushpa-the-rule-part-2-hyderabad/movie-hyd-ET00356724-MT/20241205"  # Replace with the URL of the movie/show page
+    url = "https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/description/?envType=daily-question&envId=2024-12-02"  # Replace with the URL of the movie/show page
     response = requests.get(url)
 
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, "html.parser")
 
         # Example: Check if a specific element indicates availability
-        tickets_available = soup.find("div", {"class": "__name"})  # Update the class here
+        tickets_available = soup.find("div", {"class": "flex-none"})  # Update the class here
 
         if tickets_available:
             print("Tickets are available!")
