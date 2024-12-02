@@ -5,15 +5,15 @@ from pushbullet import Pushbullet
 
 # Function to send an email notification
 def send_email(subject, body):
-    sender_email = "pragnithp@gmail.com"  # Your email address
-    receiver_email = "pragnithp@gmail.com"  # Receiver's email
-    password = "Htingarp000!"  # Your email password (use App Password if 2FA is enabled)
+    sender_email = "thevectorspace314@gmail.com"  # Your email address
+    receiver_email = "thevectorspace314@gmail.com"  # Receiver's email
+    password = "Pragnith3105!"  # Your email password (use App Password if 2FA is enabled)
 
-    message = f"Subject: bms\n\nbook my show"
+    message = f"Subject: {subject}\n\n{body}"
 
     # Set up the server and send the email
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(sender_email, password)
+        server.login("thevectorspace314@gmail.com", "Pragnith3105!")
         server.sendmail(sender_email, receiver_email, message)
 
 # Function to send a Pushbullet notification
@@ -30,8 +30,7 @@ def check_tickets():
         soup = BeautifulSoup(response.content, "html.parser")
 
         # Example: Check if a specific element indicates availability
-        # Modify the condition based on the HTML structure of the page
-        tickets_available = soup.find("div", {"phpShowtimes showtimes"})  # Customize this selector
+        tickets_available = soup.find("div", {"class": "__name"})  # Update the class here
 
         if tickets_available:
             print("Tickets are available!")
